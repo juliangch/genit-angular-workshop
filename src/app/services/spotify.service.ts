@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import { map, tap } from 'rxjs';
 
 type tokenResponse = {
   'access_token': string,
   'token_type': string,
   'expires_in': number
 }
-
-type AvailableInfo = 'album' | 'artist' | 'playlist' | 'track' | 'show' | 'episode' | 'audiobook'
 
 const credentials = {
   grant_type: 'client_credentials',
@@ -40,11 +39,13 @@ export class SpotifyService {
   }
 
   public getGenres() {
-    return this.httpClient.get<{genres: string[]}>('https://api.spotify.com/v1/recommendations/available-genre-seeds')
+    return this.httpClient.get<{genres: string[]}>('https://api.spotify.com/v1/recommendations/available-genre-seeds', {headers: this.headers})
   }
 
-  public getInfoByArtistName(name: string, infoType: AvailableInfo) {
-    return this.httpClient.get(`https://api.spotify.com/v1/search?q=${name}&type=${infoType}`)
+  public getTracksByArtistName(name: string) {
+    return this.httpClient.get(`https://api.spotify.com/v1/search?q=${name}&type=track`, {headers: this.headers}).pipe(
+      map(({ tracks }: any) => tracks.items.filter((item: any) => item.type === 'track').map(({external_urls, name}: any) => ({name, url: external_urls.spotify})))
+      )
   }
 
 }
