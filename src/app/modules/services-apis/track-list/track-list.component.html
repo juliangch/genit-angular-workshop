@@ -1,0 +1,26 @@
+<div class="container pt-5">
+    <div class="d-flex justify-content-between align-items-center">
+        <ul class="d-flex list-unstyled">
+            <li>
+                <a class="link d-flex align-items-center text-decoration-none" role="button" (click)="volver()">
+                    <span class="material-symbols-outlined align-top">chevron_left</span>
+                    <span class="btn-volver">Volver</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="container bg-white rounded">
+        <div class="row">
+            <div class="container-fluid pb-5 m-0 rounded shadow justify-content-center d-flex col-12">
+                <div class="p-5">
+                    <button role="button" (click)="getTracks()">dsfd</button>
+                    <div  class="grid">
+                        <div *ngFor="let item of serviceResponse">
+                            <app-card [serviceData]="item" [artista]="this.artista.artista"></app-card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

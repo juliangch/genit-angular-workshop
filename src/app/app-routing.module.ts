@@ -8,7 +8,7 @@ const routes: Routes = [
     component: MainComponent,
   },
   {
-    path: 'form',
+    path: 'child-routes',
     loadChildren: () => import('./modules/child-routes.module').then(m => m.ChildRoutesModule),
   },
   {
@@ -18,7 +18,8 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {})],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }

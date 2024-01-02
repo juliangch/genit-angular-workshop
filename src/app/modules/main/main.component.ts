@@ -16,7 +16,9 @@ export class MainComponent implements OnInit {
 
   moveTo(destination: string){
     if(destination == 'forms'){
-      this.router.navigateByUrl('form')
+      this.router.navigateByUrl('child-routes/form');
+    } else {
+      this.router.navigateByUrl('child-routes/table');
     }
   }
 
