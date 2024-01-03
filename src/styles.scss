@@ -2,11 +2,13 @@
 
 @use "bootstrap/scss/bootstrap";
 
+@import "./variables.scss";
+
 
 * {
     box-sizing: border-box;
   }
-  
+
 body{
-    background-color: #303030;
+    background-color: $primary;
 }
