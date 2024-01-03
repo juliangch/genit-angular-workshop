@@ -1,3 +1,5 @@
+@import "../../../../variables.scss";
+
 .titulo {
   font-family: 'Sora';
   font-size: 28.5px;
@@ -7,6 +9,8 @@
 
 .container-fluid {
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.13);
+  background-color: $secondary;
+  border: solid 1px $contrast;
 }
 
 .main-style {
@@ -20,6 +24,7 @@
 .btn-volver {
   padding-left: 0.5rem;
   transition: 0.2s ease;
+  color: $contrast;
 }
 
 .btn-volver:hover {
@@ -27,18 +32,13 @@
   transition: 0.2s ease;
 }
 
-.container-fluid {
-  background-color: #C3002F;
-}
-
 .table-responsive {
-  background-color: white;
-  overflow-x: hidden;
+  background-color: transparent;
   position: relative;
 }
 
 th {
-  color: #404F60;
+  background-color: inherit;
   font-style: normal;
   font-size: 16px;
   position: relative;
@@ -46,34 +46,35 @@ th {
   white-space: nowrap;
   border-radius: 20px;
   border-top: none !important;
+  & > div {
+    background-color: inherit;
+    color: white;
+  }
 }
 
 td {
   align-items: center;
   white-space: nowrap;
-  color: #404F60 !important;
+  color: white;
   font-size: 16px;
   padding: 0.5rem 0.5rem;
   border: none !important;
 }
 
-
-tr {
-  color: #333333 !important;
-}
-
 .table-striped>tbody>tr:nth-child(odd)>td,
 .table-striped>tbody>tr:nth-child(odd)>th {
-  background-color: #ffffff;
-  --bs-table-color-type: #ffffff00 !important;
-  --bs-table-bg-type: rgb(255 255 255 / 5%) !important;
+  background-color: $primary;
 }
 
 .table-striped>tbody>tr:nth-child(even)>td,
 .table-striped>tbody>tr:nth-child(even)>th {
-  background-color: #F4F7FA;
-  --bs-table-color-type: #ffffff00 !important;
-  --bs-table-bg-type: rgba(255, 255, 255, 0) !important;
+  background-color: $semi-contrast;
+}
+
+.table {
+  background-color: $secondary;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 
@@ -85,6 +86,6 @@ tr {
 .no-data {
   display: flex;
   justify-content: center;
-  color: #F4F7FA;
+  color: white;
   padding: 20px;
 }

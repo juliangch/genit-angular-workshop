@@ -10,22 +10,19 @@ import { SpotifyService } from 'src/app/core/services/spotify.service';
 })
 export class TrackListComponent implements OnInit {
 
-  
+
 
   serviceResponse: ServiceValue[] = [];
 
   artista: any;
 
   constructor(private router: Router,
-              private spotifyService: SpotifyService) { 
-                this.artista = this.router.getCurrentNavigation()?.extras.state;
+              private spotifyService: SpotifyService) {
+                this.artista = this.router.getCurrentNavigation()?.extras.state?.['artista'];
               }
 
   ngOnInit(): void {
-  }
-
-  getTracks() {
-    this.spotifyService.getTracksByArtistName(this.artista.artista).subscribe({
+    this.spotifyService.getTracksByArtistName(this.artista).subscribe({
       next: (res) => {
         this.serviceResponse = res;
         console.log(res)
