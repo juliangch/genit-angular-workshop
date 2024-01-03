@@ -1,15 +1,9 @@
-<div class="card card-container card-body">
-    <div class="d-flex flex-column">
-        <div class="agencia agencia-item">
-            <p class="mb-0 agencia-title">Track</p>
-            <a href="{{serviceData.url}}"><p class="agencia-valor">{{serviceData.name}}</p></a>
-        </div>
-        <div class="agencia-item">
-            <p class="mb-0 agencia-title">Cancion</p>
-            <p class="agencia-valor">{{artista}}</p>
-        </div>
-        <div class="ico-item">
-            <img class="ico-spotify" src="/assets/ico/spotify-ico.png" alt="">
-        </div>
+<a class="card card-container card-body d-flex flex-column" [href]="serviceData.external_urls.spotify" target="_blank">
+    <div class="agencia agencia-item d-flex flex-column align-items-center">
+        <p class="mb-0 agencia-title">Track</p>
+        <p class="agencia-valor">{{serviceData.name}}</p>
     </div>
-</div>
+    <div class="ico-item">
+        <img class="song-cover" [src]="serviceData.images[0].url || '/assets/ico/spotify-ico.png'" alt="song cover">
+    </div>
+</a>

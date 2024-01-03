@@ -1,10 +1,10 @@
-<div class="container pt-5">
+<div class="container pt-5 main">
   <div class="d-flex justify-content-between align-items-center">
     <ul class="d-flex list-unstyled">
       <li>
-        <a class="link d-flex align-items-center text-decoration-none" role="button" (click)="volver()">
+        <a class="link d-flex align-items-center text-decoration-none btn-volver" role="button" (click)="volver()">
           <span class="material-symbols-outlined align-top">chevron_left</span>
-          <span class="btn-volver">Volver</span>
+          <span>Volver</span>
         </a>
       </li>
     </ul>
@@ -12,17 +12,17 @@
   <div class="container bg-white rounded">
     <div class="row">
       <div class="container-fluid pb-5 m-0 rounded shadow justify-content-center d-flex col-12">
-        <div class="p-5">
-          <h3>Ingrese los datos de la persona!</h3>
-          <form [formGroup]="form" autocomplete="off" class="col-10">
-            <div>
+        <div class="p-5 d-flex flex-column align-items-center">
+          <h3 class="titulo">Ingrese los datos de la persona.</h3>
+          <form [formGroup]="form" autocomplete="off" class="col-10 mt-5">
+            <div class="d-grid gap-3">
               <div class="form-group">
-                <label class="label-color">Nombre de la persona</label>
+                <label class="label-color">Nombre</label>
                 <input class="form-control" type="text" formControlName="nombre"
                   [placeholder]="'Ingrese el nombre'">
               </div>
               <div class="form-group">
-                <label class="label-color">Apellido de la persona</label>
+                <label class="label-color">Apellido</label>
                 <input class="form-control" type="text" formControlName="apellido"
                   [placeholder]="'Ingrese el apellido'">
               </div>
@@ -31,8 +31,8 @@
                 <input class="form-control" type="text" formControlName="artista" [placeholder]="'Ingrese el genero'">
               </div>
             </div>
-            <div class="justify-content-center d-flex p-2 py-3 align-items-center footer">
-              <button class="guardar py-2 px-4" (click)="agregarPersona()" type="button" [disabled]="!form.valid">Agregar persona</button>
+            <div class="d-grid mt-3">
+              <button class="btn btn-light btn-lg mt-3" (click)="agregarPersona()" type="button" [disabled]="!form.valid">Agregar persona</button>
             </div>
           </form>
         </div>

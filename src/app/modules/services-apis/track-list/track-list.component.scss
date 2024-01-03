@@ -1,3 +1,5 @@
+@import "../../../../variables.scss";
+
 .titulo {
     font-family: 'Sora';
     font-size: 28.5px;
@@ -20,6 +22,7 @@
 .btn-volver {
     padding-left: 0.5rem;
     transition: 0.2s ease;
+    color: $contrast;
 }
 
 .btn-volver:hover {
@@ -28,6 +31,7 @@
 }
 
 .container-fluid {
-    background-color: #C3002F;
+    background-color: $secondary;
+    border: solid 1px $contrast;
 }
 

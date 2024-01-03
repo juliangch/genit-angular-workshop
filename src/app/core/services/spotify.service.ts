@@ -44,8 +44,12 @@ export class SpotifyService {
 
   public getTracksByArtistName(name: string) {
     return this.httpClient.get(`https://api.spotify.com/v1/search?q=${name}&type=track`, {headers: this.headers}).pipe(
-      map(({ tracks }: any) => tracks.items.filter((item: any) => item.type === 'track').map(({external_urls, name}: any) => ({name, url: external_urls.spotify})))
+      map(({tracks}:any) => tracks.items.map((({album}:any) => {
+        const {external_urls, images, name} = album
+        return {external_urls, images, name}
+      })))
       )
+
   }
 
 }

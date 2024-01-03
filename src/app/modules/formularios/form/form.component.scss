@@ -1,52 +1,53 @@
+@import "../../../../variables.scss";
+
 .titulo {
     font-family: 'Sora';
     font-size: 28.5px;
     font-weight: 700;
     color:#F3F6FA;
 }
-  
+
 .container-fluid{
   box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.13);
+  border: solid 1px $contrast;
 }
-.main-style{
-  height: 90vh;
-}
-  
+
 .rounded{
   border-radius: 15px !important;
 }
-  
+
 .btn-volver{
   padding-left: 0.5rem;
   transition: 0.2s ease;
+  color: $contrast;
 }
-  
+
 .btn-volver:hover{
   padding: 0;
   transition: 0.2s ease;
 }
 
 .container-fluid{
-  background-color: #0D47A1;
+  background-color: $secondary;
 }
 
 .label-color{
-    color: #F3F6FA;
-    transition: 0.6s ease;
+    color: $contrast;
 }
 input{
-    background-color: #303030;
-    border-color: #303030;
-    color: #F3F6FA !important;
-    transition: 0.6s ease;
+    background-color: white;
   }
-  
+
 .form-control{
-  color: #F3F6FA !important;
+  color: black;
 }
-input:hover{
-    background-color: #C3002F;
-    border-color: #C3002F;
-    color: #F3F6FA;
-    transition: 0.6s ease;
+
+.btn-light {
+  background-color: $primary;
+  color: white;
+  border: solid 2px $contrast;
+  &:disabled {
+    filter: brightness(.8);
+    color: whitesmoke;
+  }
 }
